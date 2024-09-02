@@ -19,13 +19,14 @@ To obtain an access token for GitHub:
 gh auth token
 ```
 
-To set the access token as an environment variable
+To set the access token as an environment variable (replace 'TOKEN-VALUE' with the value obtained in the above step)
 ```bash
-export GITHUB_TOKEN=[Token-Value]
+export GITHUB_TOKEN=[TOKEN-VALUE]
 ```
-3) Run python script 'github_org_sbom.py' . This will produce a directory 'sbom/com.github.[GitHub-Organisation-Name]/' containing all of the SBOM files for each repository in .json format
+3) Run python script 'github_org_sbom.py' . This will produce a directory 'sbom/com.github.{GITHUB-ORGANISATION-NAME}/' containing all of the SBOM files for each repository in .json format
 4) Perform regular expression search for the name of the particular software package of interest:
 
+(Replace '{GITHUB-ORGANISATION-NAME}' with the relevant value for your GitHub Organisation):
 ```bash
-grep -Rnw . -l -e 'sbom/com.github.{GitHub-Organisation-Name}/'
+grep -Rnw . -l -e 'sbom/com.github.{GITHUB-ORGANISATION-NAME}/'
 ```
