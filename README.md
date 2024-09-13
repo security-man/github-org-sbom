@@ -26,7 +26,7 @@ export GITHUB_TOKEN=[TOKEN-VALUE]
 3) Run python script 'github_org_sbom.py' . This will produce a directory 'sbom/com.github.{GITHUB-ORGANISATION-NAME}/' containing all of the SBOM files for each repository in .json format
 4) Perform regular expression search for the name of the particular software package of interest:
 
-(Replace '{GITHUB-ORGANISATION-NAME}' with the relevant value for your GitHub Organisation):
+(Replace '{SOFTWARE-DEPENDENCY}' with the relevant value for the software dependency you'd like to search for):
 ```bash
-grep -Rnw . -l -e 'sbom/com.github.{GITHUB-ORGANISATION-NAME}/'
+grep -Rnw . -l -e '{SOFTWARE-DEPENDENCY}'
 ```
